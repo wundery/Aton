@@ -1,18 +1,22 @@
 {
-  "name": "learnstorybook-design-system",
+  "name": "@branchbob/aton",
   "version": "0.1.0",
   "private": false,
+  "description": "Branchbob's React Component Library",
+  "main": "dist/index.js",
+  "repository": "https://github.com/wundery/Aton.git",
+  "author": "Golam Rabbani <golam@branchbob.com>",
+  "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.5.5",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2"
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
-    "build": "BABEL_ENV=production babel src -d dist",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "prepare": "npm run build",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 9009 -s public",
@@ -25,7 +29,12 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "browserslist": {
@@ -41,21 +50,21 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^5.2.1",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-docs": "^5.2.1",
-    "@storybook/addon-knobs": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addon-storysource": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
-    "auto": "^7.4.3",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@storybook/addon-a11y": "^6.0.21",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/node-logger": "^6.0.21",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.21",
+    "auto": "^9.53.1",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "prettier": "^2.1.1",
-    "storybook-chromatic": "^2.2.2"
-  },
-  "description": "Learn Storybook design system",
-  "main": "dist/index.js",
-  "repository": "https://github.com/chromaui/learnstorybook-design-system.git",
-  "author": "Tom Coleman <tom@thesnail.org>",
-  "license": "MIT"
+    "react-is": "^16.13.1",
+    "storybook-chromatic": "^4.0.2"
+  }
 }
