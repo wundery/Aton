@@ -3,7 +3,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import { Avatar } from './Avatar';
 
-<Meta title="Design System|Avatar" component={Avatar} />
+<Meta title='Design System/Avatar' component={Avatar} />
 
 # Avatar
 
@@ -12,11 +12,11 @@ import { Avatar } from './Avatar';
 Use an avatar for attributing actions or content to specific users. The user’s name should _always_ be present when using Avatar – either printed beside the avatar or in a tooltip.
 
 <Preview withToolbar>
-  <Story name="standard">
+  <Story name='standard'>
     <Avatar
-      size="large"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
+      size='large'
+      username='Tom Coleman'
+      src='https://avatars2.githubusercontent.com/u/132554'
     />
   </Story>
 </Preview>
@@ -31,27 +31,27 @@ Avatar is used to represent a person or an organization. By default the avatar s
 
 4 sizes are supported.
 
-<Story name="sizes">
+<Story name='sizes'>
   <div>
     <Avatar
-      size="large"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
+      size='large'
+      username='Tom Coleman'
+      src='https://avatars2.githubusercontent.com/u/132554'
     />
     <Avatar
-      size="medium"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
+      size='medium'
+      username='Tom Coleman'
+      src='https://avatars2.githubusercontent.com/u/132554'
     />
     <Avatar
-      size="small"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
+      size='small'
+      username='Tom Coleman'
+      src='https://avatars2.githubusercontent.com/u/132554'
     />
     <Avatar
-      size="tiny"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
+      size='tiny'
+      username='Tom Coleman'
+      src='https://avatars2.githubusercontent.com/u/132554'
     />
   </div>
 </Story>
@@ -60,12 +60,12 @@ Avatar is used to represent a person or an organization. By default the avatar s
 
 When no image is supplied to the `src` prop, Avatar displays initials. Avatar should be used sparingly in situations without access to images.
 
-<Story name="initials">
+<Story name='initials'>
   <div>
-    <Avatar username="Tom Coleman" />
-    <Avatar username="Dominic Nguyen" />
-    <Avatar username="Kyle Suss" />
-    <Avatar username="Michael Shilman" />
+    <Avatar username='Tom Coleman' />
+    <Avatar username='Dominic Nguyen' />
+    <Avatar username='Kyle Suss' />
+    <Avatar username='Michael Shilman' />
   </div>
 </Story>
 
@@ -73,12 +73,12 @@ When no image is supplied to the `src` prop, Avatar displays initials. Avatar sh
 
 The loading state is used when the image or username is, well, loading.
 
-<Story name="loading">
+<Story name='loading'>
   <div>
-    <Avatar size="large" loading />
-    <Avatar size="medium" loading />
-    <Avatar size="small" loading />
-    <Avatar size="tiny" loading />
+    <Avatar size='large' loading />
+    <Avatar size='medium' loading />
+    <Avatar size='small' loading />
+    <Avatar size='tiny' loading />
   </div>
 </Story>
 
@@ -86,11 +86,11 @@ The loading state is used when the image or username is, well, loading.
 
 Experiment with this story with Knobs addon in Canvas mode.
 
-<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+<Story name='knobs' parameters={{ decorators: [withKnobs] }}>
   <Avatar
     loading={boolean('Loading')}
     size={select('Size', ['tiny', 'small', 'medium', 'large'])}
-    username="Dominic Nguyen"
-    src="https://avatars2.githubusercontent.com/u/263385"
+    username='Dominic Nguyen'
+    src='https://avatars2.githubusercontent.com/u/263385'
   />
 </Story>
