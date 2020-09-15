@@ -15,10 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "polished": "^3.4.1",
+    "prop-types": "^15.7.2",
     "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.4.3"
@@ -30,7 +30,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs",
-    "release": "auto shipit"
+    "release": "auto shipit",
+    "chromatic": "chromatic"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -72,10 +73,10 @@
     "auto": "^9.53.1",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
+    "chromatic": "^5.2.0",
     "cross-env": "^7.0.2",
     "prettier": "^2.1.1",
-    "react-is": "^16.13.1",
-    "storybook-chromatic": "^4.0.2"
+    "react-is": "^16.13.1"
   },
   "bugs": {
     "url": "https://github.com/wundery/aton/issues"
