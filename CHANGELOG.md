@@ -1,3 +1,15 @@
+# v0.1.4 (Tue Sep 15 2020)
+
+#### 🐛 Bug Fix
+
+- Storybook deployment with GitHub action [#2](https://github.com/wundery/aton/pull/2) ([@mgorabbani](https://github.com/mgorabbani))
+
+#### Authors: 1
+
+- Golam Rabbani ([@mgorabbani](https://github.com/mgorabbani))
+
+---
+
 # v0.1.3 (Tue Sep 15 2020)
 
 #### 🐛 Bug Fix
