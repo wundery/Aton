@@ -1,3 +1,15 @@
+# v0.1.5 (Mon Sep 28 2020)
+
+#### 🐛 Bug Fix
+
+- Update configurations [#3](https://github.com/wundery/aton/pull/3) ([@mgorabbani](https://github.com/mgorabbani))
+
+#### Authors: 1
+
+- Golam Rabbani ([@mgorabbani](https://github.com/mgorabbani))
+
+---
+
 # v0.1.3 (Tue Sep 15 2020)
 
 #### 🐛 Bug Fix
