@@ -1,85 +1,102 @@
 {
   "name": "@branchbob/aton",
   "version": "0.1.3",
-  "private": false,
-  "description": "Branchbob's React Component Library",
-  "main": "dist/index.js",
-  "files": [
-    "/dist"
-  ],
+  "description": "Aton design system",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wundery/Aton.git"
+    "url": "git+https://github.com/wundery/aton.git"
   },
-  "author": "Golam Rabbani <golam@branchbob.com>",
   "license": "MIT",
-  "dependencies": {
-    "polished": "^3.4.1",
-    "prop-types": "^15.7.2",
-    "styled-components": "^5.2.0"
-  },
-  "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.4.3"
-  },
+  "author": "Golam Rabbani <golam@branchbob.com>",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
-    "prepare": "npm run build",
-    "test": "react-scripts test",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "build-storybook-docs": "build-storybook -s public --docs",
-    "release": "auto shipit",
-    "chromatic": "chromatic"
+    "build": "babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.test.js\" --ignore \"**/*.stories.js\"",
+    "build-docs": "build-storybook --docs",
+    "build-storybook": "build-storybook",
+    "lint": "yarn lint:js && yarn lint:package",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
+    "lint:package": "sort-package-json",
+    "release": "dotenv yarn build && auto shipit",
+    "storybook": "start-storybook -p 6006"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
   },
-  "babel": {
-    "presets": [
-      [
-        "react-app",
-        {
-          "absoluteRuntime": false
-        }
-      ]
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+  "lint-staged": {
+    "*.html": [
+      "yarn lint:js --fix"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+    "*.js": [
+      "yarn lint:js --fix"
+    ],
+    "package.json": [
+      "yarn lint:package"
     ]
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1",
+    "polished": "^3.6.4",
+    "prismjs": "1.20.0",
+    "prop-types": "^15.5.4",
+    "react-modal": "^3.11.2",
+    "react-popper-tooltip": "^2.11.1",
+    "styled-components": "^4.4.1",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-react": "^7.10.4",
-    "@storybook/addon-a11y": "^6.0.21",
-    "@storybook/addon-actions": "^6.0.21",
-    "@storybook/addon-essentials": "^6.0.21",
-    "@storybook/addon-knobs": "^6.0.21",
-    "@storybook/addon-links": "^6.0.21",
-    "@storybook/node-logger": "^6.0.21",
-    "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.21",
-    "auto": "^9.53.1",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@storybook/addon-a11y": "6.0.20",
+    "@storybook/addon-actions": "6.0.20",
+    "@storybook/addon-docs": "6.0.20",
+    "@storybook/addon-essentials": "6.0.20",
+    "@storybook/addon-storysource": "6.0.20",
+    "@storybook/eslint-config-storybook": "^2.4.0",
+    "@storybook/linter-config": "^2.5.0",
+    "@storybook/react": "6.0.20",
+    "@types/fs-extra": "^9.0.1",
+    "@types/styled-components": "^5.1.0",
+    "auto": "^9.50.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "babel-preset-react-app": "^9.1.2",
-    "chromatic": "^5.2.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "chromatic": "^5.0.0",
     "cross-env": "^7.0.2",
-    "prettier": "^2.1.1",
-    "react-is": "^16.13.1"
+    "dotenv-cli": "^3.1.0",
+    "eslint": "^7.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
+    "node-fetch": "^2.6.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sort-package-json": "^1.44.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5"
   },
-  "bugs": {
-    "url": "https://github.com/wundery/aton/issues"
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   },
-  "homepage": "https://github.com/wundery/aton#readme"
+  "engines": {
+    "node": ">=10",
+    "npm": ">=5"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ]
+  }
 }
